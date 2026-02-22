@@ -11,7 +11,6 @@ import EventsManage from "./pages/EventsManage.jsx";
 import PastEvents from "./pages/PastEvents.jsx";
 import ProtectedRoute from "./components/ProtectedRoute.jsx";
 import Layout from "./components/Layout.jsx";
-
 const App = () => {
   return (
     <AuthProvider>

@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useMemo, useRef, useState } from "react"
 import { useNavigate } from "react-router-dom";
 import api from "../api/axios.js";
 import PastEvents from "./PastEvents.jsx";
+import NetworkBackground from "./NetworkBackground.jsx";
 
 // --- HELPERS & HOOKS ---
 
@@ -172,7 +173,7 @@ const LandingEventModal = ({ event, onClose }) => {
       <div className="bg-[#080c0a] border border-[#05acc1]/30 rounded-2xl p-6 sm:p-8 max-w-lg w-full relative z-10 shadow-[0_0_40px_rgba(5,172,193,0.15)]" onClick={e => e.stopPropagation()}>
         <h2 className="text-2xl font-bold text-white mb-2">{event.title}</h2>
         <div className="flex items-center gap-3 mb-4">
-          <span className="text-[10px] sm:text-xs font-mono px-2 py-0.5 rounded-full bg-purple-500/15 text-purple-400 uppercase tracking-widest">{event.type}</span>
+          <span className="text-[10px] sm:text-xs font-mono px-2 py-0.5 rounded-full bg-[#05acc1]/15 text-[#05acc1] uppercase tracking-widest">{event.type}</span>
           {event.cost && <span className="text-[10px] sm:text-xs font-mono px-2 py-0.5 rounded-full bg-[#6bdbd1]/15 text-[#6bdbd1] uppercase tracking-widest">{event.cost}</span>}
         </div>
         <p className="text-sm text-gray-300 leading-relaxed mb-6">{event.description}</p>
@@ -214,7 +215,8 @@ const Landing = () => {
     <div className="relative min-h-screen bg-[#020403] text-white overflow-hidden selection:bg-[#05acc1] selection:text-[#020403]">
       {/* --- ANIMATED BACKGROUND --- */}
       {/* Optimization: Added transform-gpu and will-change-transform */}
-      <div className="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
+      <div className="fixed inset-0 z-0 overflow-hidden pointer-events-auto">
+        <NetworkBackground />
         <div className="absolute top-[-10%] left-[-10%] w-[40vw] h-[40vw] bg-[#05acc1] rounded-full mix-blend-screen blur-[120px] opacity-10 animate-blob transform-gpu will-change-transform" />
         <div className="absolute top-[-10%] right-[-10%] w-[40vw] h-[40vw] bg-[#6bdbd1] rounded-full mix-blend-screen blur-[120px] opacity-10 animate-blob animation-delay-2000 transform-gpu will-change-transform" />
         <div className="absolute bottom-[-20%] left-[20%] w-[40vw] h-[40vw] bg-[#09969f] rounded-full mix-blend-screen blur-[120px] opacity-10 animate-blob animation-delay-4000 transform-gpu will-change-transform" />
@@ -222,9 +224,9 @@ const Landing = () => {
       </div>
 
       {/* --- NAVBAR --- */}
-      <header className="fixed inset-x-0 top-0 z-50 transition-all duration-300">
-        <div className="absolute inset-0 bg-[#020403]/70 backdrop-blur-md border-b border-white/5" />
-        <div className="relative mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 py-3 sm:py-4">
+      <header className="fixed inset-x-0 top-0 z-[100] transition-all duration-300 pointer-events-none">
+        <div className="absolute inset-0 bg-transparent pointer-events-auto" />
+        <div className="relative mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 py-3 sm:py-4 pointer-events-auto">
           <button
             onClick={() => scrollToId("hero")}
             className="flex items-center gap-3 group"
@@ -246,12 +248,12 @@ const Landing = () => {
           </button>
 
           <nav className="hidden md:flex items-center gap-8 text-[11px] font-bold tracking-[0.15em] uppercase text-gray-400">
-            {["Home", "About Me", "Events"].map((id) => (
+            {["Home", "About Us", "Events"].map((id) => (
               <button
                 key={id}
                 onClick={() => {
                   if (id === "Home") scrollToId("hero");
-                  else if (id === "About Me") scrollToId("about");
+                  else if (id === "About Us") scrollToId("about");
                   else scrollToId("events");
                 }}
                 className="hover:text-white transition-colors relative group"
@@ -293,12 +295,12 @@ const Landing = () => {
         </div>
       </header>
 
-      <main className="pt-20 sm:pt-24">
+      <main className="pt-20 sm:pt-24 relative z-10 pointer-events-none">
         {/* --- HERO SECTION --- */}
         <section
           id="hero"
           ref={heroRef}
-          className="relative max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-20 lg:py-32 grid lg:grid-cols-2 gap-10 lg:gap-12 items-center perspective-1000"
+          className="relative max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-20 lg:py-32 grid lg:grid-cols-2 gap-10 lg:gap-12 items-center perspective-1000 pointer-events-auto"
         >
           <div
             className={`space-y-6 sm:space-y-8 transition-all duration-1000 ease-out transform ${heroVisible
@@ -406,7 +408,7 @@ const Landing = () => {
         <section
           id="about"
           ref={aboutRef}
-          className="py-20 sm:py-24 border-t border-white/5 bg-white/[0.02]"
+          className="py-20 sm:py-24 pointer-events-auto border-t border-white/5"
         >
           <div
             className={`max-w-6xl mx-auto px-4 sm:px-6 transition-all duration-1000 ${aboutVisible
@@ -459,7 +461,7 @@ const Landing = () => {
         </section>
 
         {/* --- EVENTS SECTION (EDITED) --- */}
-        <section id="events" ref={eventsRef} className="py-20 sm:py-24">
+        <section id="events" ref={eventsRef} className="py-20 sm:py-24 pointer-events-auto">
           <div
             className={`max-w-6xl mx-auto px-4 sm:px-6 transition-all duration-1000 ${eventsVisible
               ? "opacity-100 translate-y-0"
@@ -484,16 +486,16 @@ const Landing = () => {
             <div className="space-y-12 sm:space-y-16">
               {/* ANOKHA 2026 MEGA EVENT HERO GRID */}
               <div>
-                <div className="mb-6 flex items-center justify-between border-b border-purple-500/20 pb-4">
+                <div className="mb-6 flex items-center justify-between border-b border-white/10 pb-4">
                   <div>
-                    <h3 className="text-xl sm:text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-[#05acc1]">
+                    <h3 className="text-xl sm:text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#6bdbd1] to-[#05acc1]">
                       Mega Event: Anokha'26
                     </h3>
                     <p className="text-xs sm:text-sm text-gray-400 mt-1">
                       8 high-octane competitions. Are you ready?
                     </p>
                   </div>
-                  <div className="animate-pulse bg-purple-500/20 text-purple-400 border border-purple-500/50 px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase shadow-[0_0_15px_rgba(168,85,247,0.4)]">
+                  <div className="animate-pulse bg-[#05acc1]/20 text-[#05acc1] border border-[#05acc1]/50 px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase shadow-[0_0_15px_rgba(5,172,193,0.4)]">
                     Featured
                   </div>
                 </div>
@@ -501,19 +503,19 @@ const Landing = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-7">
                   {ANOKHA_EVENTS.map((ev) => (
                     <TiltCard key={ev._id} className="rounded-2xl group" intensity={6}>
-                      <div className="h-full flex flex-col rounded-2xl bg-[#080c0a] border border-purple-500/20 hover:border-purple-400/60 transition-all overflow-hidden shadow-[0_0_15px_rgba(0,0,0,0.5)]">
+                      <div className="h-full flex flex-col rounded-2xl bg-[#080c0a] border border-white/5 hover:border-[#05acc1]/60 transition-all overflow-hidden shadow-[0_0_15px_rgba(0,0,0,0.5)]">
                         <div className="relative h-32 sm:h-36 overflow-hidden bg-[#020403]">
                           <img src={ev.imageUrl} alt={ev.title} loading="lazy" className="w-full h-full object-cover group-hover:scale-[1.05] transition-transform duration-500 opacity-80 group-hover:opacity-100" />
                           <div className="absolute inset-0 bg-gradient-to-t from-[#080c0a] to-transparent" />
                         </div>
                         <div className="flex-1 flex flex-col p-4 sm:p-5 gap-2 relative z-10">
-                          <div className="text-[9px] text-purple-400 font-mono uppercase tracking-widest">{ev.type}</div>
-                          <h4 className="text-sm sm:text-base font-bold group-hover:text-purple-300 transition-colors">{ev.title}</h4>
+                          <div className="text-[9px] text-[#6bdbd1] font-mono uppercase tracking-widest">{ev.type}</div>
+                          <h4 className="text-sm sm:text-base font-bold group-hover:text-[#05acc1] transition-colors">{ev.title}</h4>
                           <p className="text-[11px] text-gray-400 line-clamp-2 leading-relaxed">{ev.description}</p>
                           <div className="text-[10px] font-bold text-[#6bdbd1] mt-1">{ev.cost}</div>
                           <div className="mt-3 flex gap-2">
                             <button type="button" onClick={() => setSelectedEventDetail(ev)} className="flex-1 py-2 rounded-lg bg-white/5 text-[10px] font-bold uppercase tracking-widest hover:bg-white/10 transition-all">Know more</button>
-                            <button type="button" onClick={() => handleRegisterClick(ev._id)} className="flex-1 py-2 rounded-lg bg-purple-500 text-white text-[10px] font-bold uppercase tracking-widest hover:shadow-[0_0_15px_rgba(168,85,247,0.6)] transition-all">Register</button>
+                            <button type="button" onClick={() => handleRegisterClick(ev._id)} className="flex-1 py-2 rounded-lg bg-[#05acc1] text-[#020403] text-[10px] font-bold uppercase tracking-widest hover:shadow-[0_0_15px_rgba(5,172,193,0.6)] transition-all">Register</button>
                           </div>
                         </div>
                       </div>
@@ -638,10 +640,10 @@ const Landing = () => {
           </div>
         </section>
 
-        <PastEvents />
+        <div className="relative pointer-events-auto"><PastEvents /></div>
       </main>
 
-      <footer className="py-8 sm:py-10 border-t border-white/5 text-center flex flex-col items-center gap-4">
+      <footer className="py-8 sm:py-10 border-t border-white/5 text-center flex flex-col items-center gap-4 relative z-10 pointer-events-auto">
         <a href="https://www.instagram.com/xkernel_griet/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-[#05acc1] transition-colors text-sm sm:text-base font-mono flex items-center gap-2 font-bold tracking-wide">
           <span>Follow for more updates</span>
           <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
