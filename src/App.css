@@ -1,0 +1,58 @@
+/* Root container: full viewport, dark base, no fixed max-width */
+#root {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  background: #020403;
+  color: #f9fafb;
+}
+
+
+.stars {
+  position: absolute;
+  inset: -200px;
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  opacity: 0.7;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.stars-layer-1 {
+  background-image:
+    radial-gradient(1px 1px at 10px 10px, #ffffffaa 0, transparent 50%),
+    radial-gradient(1px 1px at 50px 80px, #6bdbd1aa 0, transparent 50%),
+    radial-gradient(1px 1px at 130px 40px, #05acc1aa 0, transparent 50%);
+  animation: starScroll 90s linear infinite;
+}
+
+.stars-layer-2 {
+  background-image:
+    radial-gradient(1.2px 1.2px at 30px 20px, #ffffffdd 0, transparent 50%),
+    radial-gradient(1.2px 1.2px at 90px 100px, #6bdbd1dd 0, transparent 50%),
+    radial-gradient(1.2px 1.2px at 160px 60px, #05acc1dd 0, transparent 50%);
+  animation: starScroll 60s linear infinite reverse;
+  opacity: 0.9;
+}
+
+.stars-layer-3 {
+  background-image:
+    radial-gradient(2px 2px at 40px 40px, #ffffff 0, transparent 55%),
+    radial-gradient(2px 2px at 120px 90px, #6bdbd1 0, transparent 55%);
+  animation: starScroll 40s linear infinite;
+  opacity: 0.8;
+}
+
+@keyframes starScroll {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-400px, -400px, 0);
+  }
+}
+
+/* Vite starter leftovers no longer needed:
+   .logo, .card, .read-the-docs, @keyframes logo-spin
+   can be safely deleted now */
