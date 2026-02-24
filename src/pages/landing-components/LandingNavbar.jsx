@@ -67,29 +67,9 @@ const LandingNavbar = ({ navigate }) => {
                     Sponsors
                     <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-[#05acc1] transition-all group-hover:w-full" />
                 </button>
-                <button
-                    onClick={() => navigate("/login")}
-                    className="px-5 py-2 bg-white text-[#020403] rounded-full hover:bg-[#05acc1] hover:text-white hover:shadow-[0_0_20px_rgba(5,172,193,0.6)] transition-all transform hover:scale-105"
-                >
-                    LOGIN
-                </button>
             </nav>
 
-            {/* Mobile buttons */}
-            <div className="md:hidden flex items-center gap-2">
-                <button
-                    onClick={() => handleNavigation("past-events")}
-                    className="px-3 py-1.5 text-[11px] rounded-full border border-white/10 text-gray-300 font-semibold hover:border-[#6bdbd1]/50 hover:text-[#6bdbd1] transition-all"
-                >
-                    Archive
-                </button>
-                <button
-                    onClick={() => navigate("/login")}
-                    className="px-3 py-1.5 text-[11px] rounded-full bg-white text-[#020403] font-semibold"
-                >
-                    Login
-                </button>
-            </div>
+
         </div>
     </header>
     );

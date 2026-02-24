@@ -2,7 +2,7 @@ export const TEAMS_DATA = [
     {
         domain: "Faculty Coordinators",
         members: [
-            { name: "Dr. B. Padma Vijetha Dev", role: "Faculty Coordinator", dept: "CSE" },
+            { name: "Dr. B. Padma Vijetha Dev", role: "Faculty Coordinator" },
             { name: "Ms. B. Kiranmai", role: "Faculty Coordinator", dept:"AIML" },
             { name: "Ms. K. Tejaswi", role: "Faculty Coordinator",dept:"CSBS & CSDS" },
             { name: "Ms. J. Alekya", role: "Faculty Coordinator",dept:"IT" },
@@ -22,7 +22,7 @@ export const TEAMS_DATA = [
         members: [
             { name: "Swaran", role: "Lead" },
             { name: "Meduru Raga Vyshnavi", role: "Jr. Lead" },
-            { name: "P. S. N. V. S. Nikhil", role: "Member" },
+            { name: "Nikhil Pabbisetti", role: "Member" },
             { name: "Shreyas Vakkiyel", role: "Member" },
             { name: "V. Adhivenkataramana Reddy", role: "Member" },
         ]
