@@ -9,6 +9,7 @@ import LandingBackground from "./landing-components/LandingBackground.jsx";
 import LandingNavbar from "./landing-components/LandingNavbar.jsx";
 import LandingFooter from "./landing-components/LandingFooter.jsx";
 import { scrollToId } from "./landing-components/utils.js";
+import LandingTeam from "./landing-components/LandingTeam.jsx";
 
 // --- HELPERS & HOOKS ---
 
@@ -222,15 +223,24 @@ const Landing = () => {
               ].map((item, i) => (
                 <div
                   key={i}
-                  className="group p-6 sm:p-8 rounded-3xl bg-[#020403] border border-white/5 hover:border-[#05acc1]/50 transition-all hover:-translate-y-2 hover:shadow-[0_10px_40px_-10px_rgba(5,172,193,0.1)]"
+                  className="group relative p-6 sm:p-8 rounded-3xl bg-[#080c0a]/90 backdrop-blur-xl border border-[#05acc1]/30 hover:border-[#05acc1]/60 transition-all duration-500 hover:-translate-y-2 overflow-hidden shadow-[0_0_15px_rgba(5,172,193,0.15)] hover:shadow-[0_0_30px_rgba(5,172,193,0.4)]"
                 >
-                  <div className="text-3xl sm:text-4xl mb-4 grayscale group-hover:grayscale-0 transition-all">
+                  {/* Background glow effect */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#05acc1]/10 via-transparent to-transparent opacity-50 group-hover:opacity-100 transition-opacity duration-700"></div>
+
+                  {/* Grid Pattern */}
+                  <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCI+CjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0ibm9uZSI+PC9yZWN0Pgo8cGF0aCBkPSJNMCAyMEwyMCAyMEwyMCAwIiBmaWxsPSJub25lIiBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsMC4wMSkiIHN0cm9rZS13aWR0aD0iMSI+PC9wYXRoPgo8L3N2Zz4=')] opacity-20 group-hover:opacity-40 transition-opacity duration-500"></div>
+
+                  <div className="relative z-10 text-3xl sm:text-4xl mb-4 grayscale group-hover:grayscale-0 transition-all">
                     {item.icon}
                   </div>
-                  <h3 className="text-lg sm:text-xl font-bold mb-2 text-white group-hover:text-[#05acc1] transition-colors">
+                  <h3 className="relative z-10 text-lg sm:text-xl font-bold mb-2 text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#05acc1] group-hover:to-[#6bdbd1] transition-colors">
                     {item.title}
                   </h3>
-                  <p className="text-sm text-gray-400">{item.desc}</p>
+                  <p className="relative z-10 text-sm text-gray-400">{item.desc}</p>
+
+                  {/* Glowing bottom bar */}
+                  <div className="absolute bottom-0 left-0 w-full h-[3px] bg-gradient-to-r from-[#05acc1] via-[#6bdbd1] to-transparent scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-700"></div>
                 </div>
               ))}
             </div>
@@ -417,6 +427,7 @@ const Landing = () => {
           </div>
         </section>
 
+        <LandingTeam />
         <div className="relative pointer-events-auto"><PastEvents /></div>
       </main>
 

@@ -1,4 +1,4 @@
-// src/pages/Team.jsx
+
 import React, { useEffect, useMemo, useState } from "react";
 import api from "../api/axios.js";
 

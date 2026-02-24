@@ -26,12 +26,13 @@ const LandingNavbar = ({ navigate }) => (
             </button>
 
             <nav className="hidden md:flex items-center gap-8 text-[11px] font-bold tracking-[0.15em] uppercase text-gray-400">
-                {["Home", "About Us", "Events"].map((id) => (
+                {["Home", "About Us", "Team", "Events"].map((id) => (
                     <button
                         key={id}
                         onClick={() => {
                             if (id === "Home") scrollToId("hero");
                             else if (id === "About Us") scrollToId("about");
+                            else if (id === "Team") scrollToId("teams");
                             else scrollToId("events");
                         }}
                         className="hover:text-white transition-colors relative group"
