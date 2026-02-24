@@ -15,7 +15,7 @@ const LandingBackground = () => {
 
     // Sparse array of minimal tech symbols with varying positions and animation types
     const symbols = useMemo(() => [
-        { char: "< />", top: "15%", left: "12%", animation: "float1", delay: "0s", size: "text-2xl" },
+        { char: "</>", top: "15%", left: "12%", animation: "float1", delay: "0s", size: "text-2xl" },
         { char: "{ }", top: "25%", left: "82%", animation: "float2", delay: "2s", size: "text-3xl" },
         { char: lightningSvg, top: "70%", left: "15%", animation: "float3", delay: "4s", size: "text-2xl" },
         { char: "△", top: "82%", left: "80%", animation: "float1", delay: "1s", size: "text-2xl" },

@@ -291,8 +291,8 @@ const Landing = () => {
                   {ANOKHA_EVENTS.map((ev) => (
                     <TiltCard key={ev._id} className="rounded-2xl group" intensity={6}>
                       <div className="h-full flex flex-col rounded-2xl bg-[#080c0a] border border-white/5 hover:border-[#05acc1]/60 transition-all overflow-hidden shadow-[0_0_15px_rgba(0,0,0,0.5)]">
-                        <div className="relative h-32 sm:h-36 overflow-hidden bg-[#020403]">
-                          <img src={ev.imageUrl} alt={ev.title} loading="lazy" className="w-full h-full object-cover group-hover:scale-[1.05] transition-transform duration-500 opacity-80 group-hover:opacity-100" />
+                        <div className={`relative h-48 sm:h-56 overflow-hidden bg-[#020403]`}>
+                          <img src={ev.imageUrl} alt={ev.title} loading="lazy" className={`w-full h-full group-hover:scale-[1.05] transition-transform duration-500 opacity-80 group-hover:opacity-100 ${ev._id === "anokha-tech-doctor" || ev._id === "anokha-box-cricket" ? "object-cover object-top" : "object-cover"}`} />
                           <div className="absolute inset-0 bg-gradient-to-t from-[#080c0a] to-transparent" />
                         </div>
                         <div className="flex-1 flex flex-col p-4 sm:p-5 gap-2 relative z-10">
@@ -322,7 +322,7 @@ const Landing = () => {
                       >
                         <div className="h-full flex flex-col rounded-2xl bg-[#080c0a] border border-white/5 hover:border-[#05acc1]/60 transition-all overflow-hidden">
                           {ev.imageUrl && (
-                            <div className="relative h-32 sm:h-36 overflow-hidden">
+                            <div className="relative h-48 sm:h-56 overflow-hidden">
                               <img
                                 src={ev.imageUrl}
                                 alt={ev.title}
@@ -379,7 +379,7 @@ const Landing = () => {
                       >
                         <div className="h-full flex flex-col rounded-2xl bg-[#080c0a] border border-white/5 hover:border-[#6bdbd1]/60 transition-all overflow-hidden">
                           {ev.imageUrl && (
-                            <div className="relative h-32 sm:h-36 overflow-hidden">
+                            <div className="relative h-48 sm:h-56 overflow-hidden">
                               <img
                                 src={ev.imageUrl}
                                 alt={ev.title}

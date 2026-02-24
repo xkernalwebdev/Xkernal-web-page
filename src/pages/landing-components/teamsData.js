@@ -2,10 +2,10 @@ export const TEAMS_DATA = [
     {
         domain: "Faculty Coordinators",
         members: [
-            { name: "Dr. B. Padma Vijetha Dev", role: "Faculty Coordinator" },
-            { name: "Ms. B. Kiranmai", role: "Faculty Coordinator" },
-            { name: "Ms. K. Tejaswi", role: "Faculty Coordinator" },
-            { name: "Ms. J. Alekya", role: "Faculty Coordinator" },
+            { name: "Dr. B. Padma Vijetha Dev", role: "Faculty Coordinator", dept: "CSE" },
+            { name: "Ms. B. Kiranmai", role: "Faculty Coordinator", dept:"AIML" },
+            { name: "Ms. K. Tejaswi", role: "Faculty Coordinator",dept:"CSBS & CSDS" },
+            { name: "Ms. J. Alekya", role: "Faculty Coordinator",dept:"IT" },
         ]
     },
     {

@@ -9,6 +9,7 @@ import Profile from "./pages/Profile.jsx";
 import Team from "./pages/Team.jsx";
 import EventsManage from "./pages/EventsManage.jsx";
 import PastEvents from "./pages/PastEvents.jsx";
+import Sponsors from "./pages/Sponsors.jsx";
 import ProtectedRoute from "./components/ProtectedRoute.jsx";
 import Layout from "./components/Layout.jsx";
 const App = () => {
@@ -20,6 +21,9 @@ const App = () => {
 
         {/* Past Events — public */}
         <Route path="/past-events" element={<PastEvents />} />
+
+        {/* Sponsors */}
+        <Route path="/sponsors" element={<Sponsors />} />
 
         {/* Member login */}
         <Route path="/login" element={<Login />} />

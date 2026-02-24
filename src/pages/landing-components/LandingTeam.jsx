@@ -66,6 +66,11 @@ const DomainSection = ({ domainData }) => {
                                         <span className={`text-[10px] font-bold tracking-widest uppercase px-3 py-1.5 rounded-lg border ${getRoleBg(member.role)} ${getRoleColor(member.role)} shadow-inner`}>
                                             {member.role}
                                         </span>
+                                        {member.dept && (
+                                            <span className="text-[10px] font-bold tracking-widest uppercase px-3 py-1.5 rounded-lg border bg-white/5 border-white/10 text-gray-400 shadow-inner">
+                                                {member.dept}
+                                            </span>
+                                        )}
                                     </div>
                                 </div>
 

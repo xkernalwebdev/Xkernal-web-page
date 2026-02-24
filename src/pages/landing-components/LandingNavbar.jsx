@@ -9,17 +9,16 @@ const LandingNavbar = ({ navigate }) => (
                 onClick={() => scrollToId("hero")}
                 className="flex items-center gap-3 group"
             >
-                <div className="relative h-9 w-9 sm:h-10 sm:w-10 overflow-hidden rounded-xl bg-gradient-to-br from-[#05acc1] to-[#09969f] p-[1px]">
-                    <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors" />
-                    <div className="h-full w-full bg-[#020403] rounded-[10px] flex items-center justify-center font-black text-[#05acc1]">
-                        X
-                    </div>
-                </div>
+                <img
+                    src="https://res.cloudinary.com/dynpwzjch/image/upload/v1771761776/ChatGPT_Image_Feb_22_2026_05_32_34_PM_mnmbnl.png"
+                    alt="X-Kernel Logo"
+                    className="h-12 w-12 sm:h-14 sm:w-14 rounded-full object-cover border border-[#05acc1]/30 hover:border-[#05acc1]/60 transition-all hover:shadow-[0_0_10px_rgba(5,172,193,0.4)]"
+                />
                 <div className="text-left">
-                    <p className="text-xs sm:text-sm font-bold tracking-[0.2em] uppercase text-white group-hover:text-[#05acc1] transition-colors">
-                        X‑Kernel
+                    <p className="text-sm sm:text-lg font-bold tracking-[0.2em] uppercase text-white group-hover:text-[#05acc1] transition-colors">
+                        X-Kernel
                     </p>
-                    <p className="text-[9px] text-gray-500 font-mono">
+                    <p className="text-[8px] sm:text-[10px] text-gray-500 font-mono">
                         GRIET MAINFRAME
                     </p>
                 </div>
@@ -49,6 +48,13 @@ const LandingNavbar = ({ navigate }) => (
                     <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-[#6bdbd1] transition-all group-hover:w-full" />
                 </button>
                 <button
+                    onClick={() => navigate("/sponsors")}
+                    className="hover:text-white transition-colors relative group"
+                >
+                    Sponsors
+                    <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-[#05acc1] transition-all group-hover:w-full" />
+                </button>
+                <button
                     onClick={() => navigate("/login")}
                     className="px-5 py-2 bg-white text-[#020403] rounded-full hover:bg-[#05acc1] hover:text-white hover:shadow-[0_0_20px_rgba(5,172,193,0.6)] transition-all transform hover:scale-105"
                 >
@@ -58,6 +64,11 @@ const LandingNavbar = ({ navigate }) => (
 
             {/* Mobile buttons */}
             <div className="md:hidden flex items-center gap-2">
+                <img
+                    src="https://res.cloudinary.com/dynpwzjch/image/upload/v1771761776/ChatGPT_Image_Feb_22_2026_05_32_34_PM_mnmbnl.png"
+                    alt="Club Logo"
+                    className="h-8 w-8 rounded-full object-cover border border-[#05acc1]/30"
+                />
                 <button
                     onClick={() => scrollToId("past-events")}
                     className="px-3 py-1.5 text-[11px] rounded-full border border-white/10 text-gray-300 font-semibold hover:border-[#6bdbd1]/50 hover:text-[#6bdbd1] transition-all"
