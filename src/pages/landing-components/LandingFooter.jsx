@@ -5,15 +5,13 @@ const LandingFooter = () => {
     const navigate = useNavigate();
 
     return (
-    <footer className="py-8 sm:py-10 border-t border-white/5 text-center flex flex-col items-center gap-4 relative z-10 pointer-events-auto">
-        <div className="flex flex-wrap justify-center gap-4 sm:gap-6 text-[10px] sm:text-xs font-bold tracking-wide">
-            <button
-                onClick={() => navigate("/sponsors")}
-                className="text-gray-400 hover:text-[#05acc1] transition-colors uppercase font-mono"
-            >
-                Sponsors
-            </button>
-        </div>
+    <footer className="py-12 sm:py-16 border-t border-white/5 text-center flex flex-col items-center gap-8 relative z-10 pointer-events-auto">
+        <button
+            onClick={() => navigate("/sponsors")}
+            className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight uppercase text-white hover:text-[#05acc1] transition-colors"
+        >
+            Sponsors
+        </button>
         <a href="https://www.instagram.com/xkernel_griet/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-[#05acc1] transition-colors text-sm sm:text-base font-mono flex items-center gap-2 font-bold tracking-wide">
             <span>Follow for more updates</span>
             <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">

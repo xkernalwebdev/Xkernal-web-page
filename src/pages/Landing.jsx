@@ -49,6 +49,18 @@ const Landing = () => {
       .catch(() => { });
   }, []);
 
+  useEffect(() => {
+    const hash = window.location.hash.slice(1);
+    if (hash) {
+      setTimeout(() => {
+        const element = document.getElementById(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }, 100);
+    }
+  }, []);
+
   const { techEvents, nonTechEvents } = useMemo(() => {
     const tech = [], nonTech = [];
     for (const ev of events) {

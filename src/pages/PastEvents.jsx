@@ -211,7 +211,7 @@ const SingleEventDisplay = ({ events, onSelectEvent }) => {
                                 <div onClick={() => { if (isCenter) onSelectEvent(ev); }} className={`flex flex-col rounded-3xl bg-[#080c0a] border transition-all overflow-hidden w-full h-auto select-none shadow-[0_20px_60px_rgba(0,0,0,0.6)]
                                     ${(ev.type === "technical" || ev.type === "both") ? "border-white/10 hover:border-[#05acc1]/60" : "border-white/10 hover:border-[#6bdbd1]/60"}
                                 `}>
-                                    <div className="relative h-[250px] sm:h-[300px] lg:h-[340px] overflow-hidden bg-[#050709] shrink-0">
+                                    <div className="relative h-[280px] sm:h-[320px] lg:h-[360px] overflow-hidden bg-[#050709] shrink-0">
                                         <CardCarousel
                                             images={ev.images || [ev.imageUrl]}
                                             title={ev.title}
@@ -545,10 +545,6 @@ const PastEvents = () => {
                 >
                     {/* Eye-brow */}
                     <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#05acc1]/10 border border-[#05acc1]/20 text-[#05acc1] text-[10px] font-mono tracking-widest uppercase mb-6">
-                        <span className="relative flex h-2 w-2">
-                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#05acc1] opacity-75" />
-                            <span className="relative inline-flex rounded-full h-2 w-2 bg-[#05acc1]" />
-                        </span>
                         Archive // X-Kernel Events
                     </div>
 

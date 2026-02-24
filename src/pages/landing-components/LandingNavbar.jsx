@@ -1,12 +1,25 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 import { scrollToId } from "./utils";
 
-const LandingNavbar = ({ navigate }) => (
+const LandingNavbar = ({ navigate }) => {
+    const location = useLocation();
+    const isLandingPage = location.pathname === "/";
+
+    const handleNavigation = (targetId) => {
+        if (isLandingPage) {
+            scrollToId(targetId);
+        } else {
+            navigate(`/#${targetId}`);
+        }
+    };
+
+    return (
     <header className="fixed inset-x-0 top-0 z-[100] transition-all duration-300 pointer-events-none">
         <div className="absolute inset-0 bg-transparent pointer-events-auto" />
         <div className="relative mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 py-3 sm:py-4 pointer-events-auto">
             <button
-                onClick={() => scrollToId("hero")}
+                onClick={() => handleNavigation("hero")}
                 className="flex items-center gap-3 group"
             >
                 <img
@@ -29,10 +42,10 @@ const LandingNavbar = ({ navigate }) => (
                     <button
                         key={id}
                         onClick={() => {
-                            if (id === "Home") scrollToId("hero");
-                            else if (id === "About Us") scrollToId("about");
-                            else if (id === "Team") scrollToId("teams");
-                            else scrollToId("events");
+                            if (id === "Home") handleNavigation("hero");
+                            else if (id === "About Us") handleNavigation("about");
+                            else if (id === "Team") handleNavigation("teams");
+                            else handleNavigation("events");
                         }}
                         className="hover:text-white transition-colors relative group"
                     >
@@ -41,7 +54,7 @@ const LandingNavbar = ({ navigate }) => (
                     </button>
                 ))}
                 <button
-                    onClick={() => scrollToId("past-events")}
+                    onClick={() => handleNavigation("past-events")}
                     className="hover:text-white transition-colors relative group"
                 >
                     Past Events
@@ -64,13 +77,8 @@ const LandingNavbar = ({ navigate }) => (
 
             {/* Mobile buttons */}
             <div className="md:hidden flex items-center gap-2">
-                <img
-                    src="https://res.cloudinary.com/dynpwzjch/image/upload/v1771761776/ChatGPT_Image_Feb_22_2026_05_32_34_PM_mnmbnl.png"
-                    alt="Club Logo"
-                    className="h-8 w-8 rounded-full object-cover border border-[#05acc1]/30"
-                />
                 <button
-                    onClick={() => scrollToId("past-events")}
+                    onClick={() => handleNavigation("past-events")}
                     className="px-3 py-1.5 text-[11px] rounded-full border border-white/10 text-gray-300 font-semibold hover:border-[#6bdbd1]/50 hover:text-[#6bdbd1] transition-all"
                 >
                     Archive
@@ -84,6 +92,7 @@ const LandingNavbar = ({ navigate }) => (
             </div>
         </div>
     </header>
-);
+    );
+};
 
 export default LandingNavbar;

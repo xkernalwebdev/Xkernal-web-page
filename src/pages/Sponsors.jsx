@@ -35,6 +35,10 @@ const Sponsors = () => {
   const navigate = useNavigate();
   const [sponsorsRef, sponsorsVisible] = useSectionInView();
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="relative min-h-screen bg-[#020403] text-white overflow-hidden selection:bg-[#05acc1] selection:text-[#020403]">
       <LandingBackground />

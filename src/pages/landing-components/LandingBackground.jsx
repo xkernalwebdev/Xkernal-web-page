@@ -29,7 +29,7 @@ const LandingBackground = () => {
     ], []);
 
     return (
-        <div className="fixed inset-0 z-0 overflow-hidden bg-gradient-to-br from-[#020b18] via-[#01040a] to-[#010204] pointer-events-auto">
+        <div className="fixed inset-0 z-0 overflow-hidden bg-gradient-to-br from-[#020b18] via-[#01040a] to-[#010204] pointer-events-none">
 
             {/* Subtle Grid Layout */}
             <div
