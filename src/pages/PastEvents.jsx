@@ -365,6 +365,7 @@ const FEATURED_EVENT = {
     title: "Agentic AI Lecture",
     description: "The Seminar on Agentic AI, organized by X-Kernel in collaboration with the Department of CSE at GRIET on 10th October 2025, provided deep insights into how intelligent agents are transforming industries. Led by Mr. Satish Kumar AV, the session explored core concepts such as Retrieval-Augmented Generation (RAG), tokenization, and prompt engineering. Students gained clarity on how Agentic AI systems combine reasoning, automation, and real-time data retrieval to solve complex real-world problems. The seminar emphasized practical applications and encouraged participants to explore innovation in AI-driven systems.",
     images: [
+        "https://res.cloudinary.com/dynpwzjch/image/upload/v1772023984/WhatsApp_Image_2026-02-25_at_1.33.31_PM_x90bjy.jpg",
         "https://res.cloudinary.com/dynpwzjch/image/upload/v1771679849/P34A2497_hbf9bo.jpg",
         "https://res.cloudinary.com/dynpwzjch/image/upload/v1771679849/P34A2542_ntng5w.jpg",
         "https://res.cloudinary.com/dynpwzjch/image/upload/v1771679843/IMG_4223_j4txdh.jpg",
@@ -376,6 +377,7 @@ const WEBINAR_EVENT = {
     title: "Project-Based Learning Webinar",
     description: "The Webinar on Project-Based Learning, conducted on 30th April 2025, highlighted how real-world projects enhance technical competence and global career readiness. Speakers Dr. Vikas Vittal Shinde and Mr. Sandip explained how Project-Based Learning (PBL) strengthens critical thinking, hands-on problem-solving, and interdisciplinary collaboration. The session also demonstrated how structured project work can create pathways to international internships and research opportunities. Students were guided on aligning academic learning with industry expectations through practical implementation.",
     images: [
+        "https://res.cloudinary.com/dynpwzjch/image/upload/v1772023985/WhatsApp_Image_2026-02-25_at_12.58.16_PM_yf9p01.jpg",
         "https://res.cloudinary.com/dynpwzjch/image/upload/v1771691237/webinar1_hxeiz4.png",
         "https://res.cloudinary.com/dynpwzjch/image/upload/v1771691294/webinar2_vh4qun.png"
     ]
@@ -385,6 +387,7 @@ const CPL_EVENT = {
     title: "CPL (Coding Premier League)",
     description: "CPL (Coding Premier League) was a competitive, team-based coding tournament structured in a knockout format. Participants advanced through group rounds, semifinals, and a high-intensity final where speed and accuracy determined the champions. The competition tested algorithmic thinking, logical reasoning, and time management under pressure. Designed to simulate real competitive programming environments, CPL encouraged teamwork, strategic planning, and analytical problem-solving, rewarding the winners with cash prizes and certificates.",
     images: [
+        "https://res.cloudinary.com/dynpwzjch/image/upload/v1772023983/WhatsApp_Image_2026-02-25_at_12.56.13_PM_uh65ws.jpg",
         "https://res.cloudinary.com/dynpwzjch/image/upload/v1771691290/cpl1_kwsprg.jpg",
         "https://res.cloudinary.com/dynpwzjch/image/upload/v1771691236/clp3_i3lfuq.jpg",
         "https://res.cloudinary.com/dynpwzjch/image/upload/v1771691236/cpl4_cjoa0h.jpg"

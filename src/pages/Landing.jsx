@@ -299,6 +299,16 @@ const Landing = () => {
                   </div>
                 </div>
 
+                <div className="mb-8 flex justify-center">
+                  <div className="w-full rounded-2xl overflow-hidden border border-white/10 shadow-lg">
+                    <img 
+                      src="https://res.cloudinary.com/dynpwzjch/image/upload/v1772023985/WhatsApp_Image_2026-02-25_at_2.22.52_PM_nkqeaw.jpg" 
+                      alt="Mega Event: Anokha'26 Poster" 
+                      className="w-full h-auto object-cover hover:scale-[1.03] transition-transform duration-1000"
+                    />
+                  </div>
+                </div>
+
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-7">
                   {ANOKHA_EVENTS.map((ev) => (
                     <TiltCard key={ev._id} className="rounded-2xl group" intensity={6}>

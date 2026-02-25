@@ -8,9 +8,13 @@ const LandingFooter = () => {
     <footer className="py-12 sm:py-16 border-t border-white/5 text-center flex flex-col items-center gap-8 relative z-10 pointer-events-auto">
         <button
             onClick={() => navigate("/sponsors")}
-            className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight uppercase text-white hover:text-[#05acc1] transition-colors"
+            className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight uppercase text-white hover:text-[#05acc1] transition-all duration-300 relative group cursor-pointer flex items-center gap-3"
         >
             Sponsors
+            <svg className="w-6 h-6 opacity-0 group-hover:opacity-100 transform group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+            <span className="absolute -bottom-2 left-0 w-0 h-[3px] bg-[#05acc1] group-hover:w-full transition-all duration-300" />
         </button>
         <a href="https://www.instagram.com/xkernel_griet/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-[#05acc1] transition-colors text-sm sm:text-base font-mono flex items-center gap-2 font-bold tracking-wide">
             <span>Follow for more updates</span>

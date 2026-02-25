@@ -3,13 +3,13 @@ import TiltCard from "../../components/TiltCard.jsx";
 import { TEAMS_DATA } from "./teamsData.js";
 
 const getRoleColor = (role) => {
-    if (role.includes("President") || role.includes("Faculty") || role.includes("Secretary")) return "text-[#6bdbd1]";
+    if (role.includes("President") || role.includes("Faculty") || role.includes("Secretary") || role.includes("Xkernel")) return "text-[#6bdbd1]";
     if (role.includes("Lead")) return "text-[#05acc1]";
     return "text-gray-400";
 };
 
 const getRoleBg = (role) => {
-    if (role.includes("President") || role.includes("Faculty") || role.includes("Secretary")) return "bg-[#6bdbd1]/10 border-[#6bdbd1]/30";
+    if (role.includes("President") || role.includes("Faculty") || role.includes("Secretary") || role.includes("Xkernel")) return "bg-[#6bdbd1]/10 border-[#6bdbd1]/30";
     if (role.includes("Lead")) return "bg-[#05acc1]/10 border-[#05acc1]/30";
     return "bg-white/5 border-white/10";
 };
